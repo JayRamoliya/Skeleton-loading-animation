@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton loading animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #e2dede;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 300px;
+            background: #f1eeee;
+            overflow: hidden;
+            box-shadow: 0 1px 35px #7a7676;
+        }
+        .container::before{
+            position: absolute;
+            content: '';
+            z-index: 99;
+            top: 0px;
+            left: 30px;
+            width: 60px;
+            height: 300px;
+            filter: blur(46px);
+            background: #f1eeee;
+            animation: load .8s linear infinite;
+        }
+        @keyframes load{
+            0%{
+                left: 30px;
+            }
+            100%{
+                left: 410px;
+            }
+        }
+        .circle{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            background: #cfc9c9;
+            border-radius: 50%;
+        }
+        .heading, .heading2, .para{
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            width: 210px;
+            height: 30px;
+            background: #cfc9c9;
+        }
+        .heading2{
+            top: 100px;
+            right: 70px;
+            width: 170px;
+            height: 25px;
+        }
+        .para{
+            top: 160px;
+            width: 340px;
+            height: 110px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="heading"></div>
+        <div class="heading2"></div>
+        <div class="para"></div>
+    </div>
+</body>
+</html>
